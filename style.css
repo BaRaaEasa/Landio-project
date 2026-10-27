@@ -1,0 +1,388 @@
+/* Start Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --header-font: "Nunito", sans-serif;
+  --default-font: "Roboto", sans-serif;
+
+  --default-color: #4a4b64;
+  --heading-color: #242859;
+  --accent-color: #0b1ae9;
+  --white-color: #ffffff;
+
+  --rounded-sm: 4px;
+  --rounded-md: 6px;
+  --rounded-lg: 10px;
+
+  --transition: all 0.3s ease;
+}
+html {
+  font-size: 17px;
+}
+a {
+  text-decoration: none;
+  color: var(--default-color);
+  transition: var(--transition);
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.padding-section {
+  padding-block: 5.5rem;
+}
+
+.container {
+  padding-inline: 4.5rem;
+}
+
+body {
+  font-family: var(--default-font);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+  color: var(--heading-color);
+}
+
+.button {
+  border: none;
+  outline: none;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  text-decoration: none;
+}
+.header-toggle-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-toggle-menu i {
+  font-size: 1.5rem;
+  display: none;
+}
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.header-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  position: relative;
+}
+.header-section h2::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background-color: var(--accent-color);
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header-section p {
+  color: color-mix(in srgb, #4a4b64, transparent 25%);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+/* End Global Style */
+
+/* Start Header Style */
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--white-color);
+  z-index: 10;
+  padding-block: 1.5rem;
+}
+.logo {
+  font-size: 1.5rem;
+}
+.Header-menu a {
+  font-size: 1.0625rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 3.125rem;
+}
+.Header-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  text-transform: capitalize;
+}
+.Header-menu a:active {
+  color: var(--accent-color);
+  transform: translateY(0) scale(0.97);
+}
+.Header-menu a:hover {
+  color: var(--accent-color);
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-list {
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: calc(100% + 15px);
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 10rem;
+  border-radius: var(--rounded-sm);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: var(--transition);
+}
+.dropdown:hover .dropdown-list {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0px);
+}
+header .header-btn {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 3.125rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+  margin: 0 0 0 1.875rem;
+  transition: var(--transition);
+}
+.header-btn a {
+  color: var(--white-color);
+}
+.header-btn:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+/* End Header Style */
+
+/* Start Testmonials Style */
+.testimonials {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 97%) 0%
+  );
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.testimonials .header-section {
+  text-align: center;
+  padding-bottom: 3.75rem;
+}
+.testimonials-card {
+  border-radius: 24px;
+  box-shadow: 0 8px 32px
+    color-mix(in srgb, var(--default-color), transparent 92%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 94%);
+  background-color: var(--white-color);
+  padding: 2rem;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+.testimonials-card[active="true"] {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 94%) 0%,
+    var(--white-color) 100%
+  );
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+.testimonial-label {
+  position: absolute;
+  top: -12px;
+  right: 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--accent-color) 0%,
+    color-mix(in srgb, var(--accent-color), #007bff 20%) 100%
+  );
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 16px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+.testimonial-label i {
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.testimonials-card:hover {
+  box-shadow: 0 20px 60px
+    color-mix(in srgb, var(--default-color), transparent 85%);
+}
+.testimonials-card-details {
+}
+.testimonials-card-details-rate {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+.testimonials-card-details-rate i {
+  color: #ffc107;
+  font-size: 1rem;
+  filter: drop-shadow(0 2px 4px color-mix(in srgb, #ffc107, transparent 60%));
+}
+.testimonials-card-content {
+  position: relative;
+  margin: 0 0 2rem 0;
+}
+.testimonials-card-content ::after {
+  content: '"';
+  position: absolute;
+  top: -1rem;
+  left: -0.5rem;
+  font-size: 4rem;
+  color: color-mix(in srgb, var(--accent-color), transparent 80%);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.testimonials-card-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--default-color);
+  font-style: italic;
+}
+.testimonials-card-client {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 92%);
+}
+.testimonials-card-client-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 4px 16px
+    color-mix(in srgb, var(--accent-color), transparent 80%);
+  flex-shrink: 0;
+}
+.testimonials-card-client-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonials-card-client-details {
+  display: flex;
+  flex-direction: column;
+}
+.testimonials-card-client-details h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--heading-color);
+}
+.testimonials-card-client-details .title {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.testimonials-card-client-details .company {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-weight: 500;
+}
+
+/* End Testmonials Style */
+
+/* Start Media Screen Styles */
+@media (max-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+  .container {
+    padding-inline: 2.5rem;
+  }
+  .Header-menu {
+    display: none;
+  }
+  .header-toggle-menu i {
+    display: block;
+  }
+  .testimonials-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    padding-inline: 1.5rem;
+  }
+  .testimonials-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 640px) {
+  html {
+    font-size: 12px;
+  }
+  .container {
+    padding-inline: 1rem;
+  }
+  .testimonials-container {
+    grid-template-columns: repeat(1, 1fr);
+    /* gap: 1rem; */
+  }
+}
+
+/* End Media Screen Styles */
